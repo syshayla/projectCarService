@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+
+<![endif]-->
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h4 class="card-title">CarService Management- An ultimate solution for your vehicle!</h4>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a href="#">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">About</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+         <div class="row">
+
+             <div class="col-md-6" style="text-align: right"> <h1>
+                 <a th:href="@{/emp/add}">Add New Employees</a> </h1>
+             </div>
+
+         </div>
+
+         <div class="row">
+             <div class="col-md-12">
+                 <table class="table">
+                     <tr class="">
+                         <th>Id</th>
+                         <th>Name</th>
+                         <th>gender</th>
+                         <th>mobile</th>
+                         <th>Email</th>
+                         <th>Designation</th>
+                         <th>JoiningDate</th>
+                         <th>User</th>
+                         <th>Company</th>
+                         <th colspan="2">Action</th>
+                     </tr>
+                     <tr th:each="u : ${list}">
+                         <td th:text="${u.id}"></td>
+                         <td th:text="${u.name}"></td>
+                         <td th:text="${u.gender}"></td>
+                         <td th:text="${u.mobile}"></td>
+                         <td th:text="${u.email}"></td>
+                         <td th:text="${u.designation}"></td>
+                         <td th:text="${u.joiningDate}"></td>
+
+                         <td>
+                             <span  th:each="user : ${u.user}" th:text="${user.name}+' '"></span>
+                         </td>
+                         <td>
+                             <span  th:each="user : ${u.company}" th:text="${user.name}+' '"></span>
+                         </td>
+                         <td> <a th:href="@{'/emp/edit/'+${u.id}}">Edit</a></td>
+                         <td> <a th:href="@{'/emp/delete/'+${u.id}}">Delete</a></td>
+                     </tr>
+                 </table>
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+
+<![endif]-->
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h4 class="page-title">Service Category</h4>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a href="#">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Add Category</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+
+
+         <!-- ============================================================== -->
+         <div class="card">
+             <div class="card-body wizard-content">
+                 <h4 class="card-title">CarService Management- An ultimate solution for your vehicle!</h4>
+                 <h6 class="card-subtitle"></h6>
+                 <span th:class="succes" th:text="${successMsg}"></span>
+                 <form id="example-form" th:action="@{/serType/add}" th:object="${serviceType}" method="post" class="m-t-40">
+                     <div>
+                         <h3>Add Service Category</h3>
+                         <section>
+                             <label for="roleName">Service Category</label>
+                             <input id="roleName" th:field="*{name}" type="text" class="required form-control">
+                             <button type="submit"  class="btn btn-primary btn-lg">Save</button>
+                         </section>
+
+
+                     </div>
+                 </form>
+             </div>
+         </div>
+         <!-- ============================================================== -->
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>
