@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -53,6 +54,11 @@ public class SupplierController {
     public String viewList(Model model){
         List<Supplier> list=this.supplierRepo.findAll();
         model.addAttribute("list", list);
+        return "suppliers/list";
+    }
+    @GetMapping(value = "delete/{id}")
+    public String delete(@PathVariable Long id) {
+        this.supplierRepo.deleteById(id);
         return "suppliers/list";
     }
 }

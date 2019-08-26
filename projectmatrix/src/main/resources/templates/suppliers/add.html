@@ -63,15 +63,21 @@
                      <div>
                          <h3>Add Supplier</h3>
                          <section>
+                             <div class="form-control col-10">
                              <label for="roleName">Supplier Name *</label>
                              <input id="roleName" th:field="*{name}" type="text" class="required form-control">
-
+                             </div>
+                             <div class="form-control col-10">
                              <label for="addrss">Address: </label>
                              <input id="addrss" th:field="*{address}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="con">Contact: </label>
-                             <input id="con" th:field="*{contact}" type="text" class="required form-control">
+                                 <input id="con" th:field="*{contact}" type="text" class="required form-control"></div>
+                             <div class="form-control col-10">
                              <label for="email">Email: </label>
                              <input id="email" th:field="*{email}" type="text" class="required form-control">
+                             </div>
                              <button type="submit"  class="btn btn-primary btn-lg">Save</button>
                          </section>
 

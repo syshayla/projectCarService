@@ -45,8 +45,8 @@
      <div class="container-fluid" >
          <div class="row">
 
-             <div class="col-md-6" style="text-align: right"> <h1>
-                 <a th:href="@{/product/add}">Add Products</a> </h1>
+             <div class="col-md-6" style="text-align: right">
+                 <h3><a th:href="@{/purchase/add}">Add purchase Products</a> </h3>
              </div>
 
          </div>
@@ -56,33 +56,37 @@
                  <table class="table">
                      <tr class="">
                          <th>Id</th>
-                         <th>Name</th>
+
                           <th>Quantity</th>
                          <th>Unit Price</th>
                          <th>Total Price</th>
-                         <th>Product Category</th>
+                         <th>Purchasse Date</th>
+
+                         <th>Product Code</th>
+
                          <th>Company</th>
                          <th>Supplier</th>
 
                          <th colspan="2">Action</th>
                      </tr>
-                     <tr th:each="u : ${list}">
-                         <td th:text="${u.id}"></td>
-                         <td th:text="${u.name}"></td>
-                         <td th:text="${u.qty}"></td>
-                         <td th:text="${u.unitPrice}"></td>
-                         <td th:text="${u.totalPrice}"></td>
-                         <td th:text="${u.productCategory.name}">
+                     <tr th:each="r : ${list}">
+                         <td th:text="${r.id}"></td>
+
+                         <td th:text="${r.qty}"></td>
+                         <td th:text="${r.unitPrice}"></td>
+                         <td th:text="${r.totalPrice}"></td>
+                         <td th:text="${r.purchaseDate}"></td>
+                         <td th:text="${r.product.code}">
                          </td>
 
-                         <td th:text="${u.company.name}">
+                         <td th:text="${r.company.name}">
                          </td>
-                         <td th:text="${u.supplier.name}">
+                         <td th:text="${r.supplier.name}">
                          </td>
 
 
-                         <td> <a th:href="@{'/product/edit/'+${u.id}}">Edit</a></td>
-                         <td> <a th:href="@{'/product/delete/'+${u.id}}">Delete</a></td>
+                         <td> <a th:href="@{'/purchase/edit/'+${r.id}}">Edit</a></td>
+                         <td> <a th:href="@{'/purchase/delete/'+${r.id}}">Delete</a></td>
                      </tr>
                  </table>
 

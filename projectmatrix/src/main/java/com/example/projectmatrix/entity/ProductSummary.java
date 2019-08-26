@@ -7,7 +7,7 @@ public class ProductSummary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String code;
     private int totalQty;
     private int soldQty;
     private int availableQty;
@@ -18,7 +18,7 @@ public class ProductSummary {
 
 @OneToOne
 @JoinColumn(name = "product_id")
-private ProductPurchase productPurchase;
+private Product product;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
@@ -27,14 +27,16 @@ private ProductPurchase productPurchase;
     public ProductSummary() {
     }
 
-    public ProductSummary(int totalQty, int soldQty, int availableQty, double totalPurchaseAmount, double totalSoldAmount, double profit, ProductPurchase productPurchase, Company company) {
+
+    public ProductSummary(String code, int totalQty, int soldQty, int availableQty, double totalPurchaseAmount, double totalSoldAmount, double profit, Product product, Company company) {
+        this.code = code;
         this.totalQty = totalQty;
         this.soldQty = soldQty;
         this.availableQty = availableQty;
         this.totalPurchaseAmount = totalPurchaseAmount;
         this.totalSoldAmount = totalSoldAmount;
         this.profit = profit;
-        this.productPurchase = productPurchase;
+        this.product = product;
         this.company = company;
     }
 
@@ -44,6 +46,14 @@ private ProductPurchase productPurchase;
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public int getTotalQty() {
@@ -94,12 +104,12 @@ private ProductPurchase productPurchase;
         this.profit = profit;
     }
 
-    public ProductPurchase getProductPurchase() {
-        return productPurchase;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductPurchase(ProductPurchase productPurchase) {
-        this.productPurchase = productPurchase;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public Company getCompany() {

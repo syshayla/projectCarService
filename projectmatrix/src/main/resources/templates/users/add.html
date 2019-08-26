@@ -57,21 +57,30 @@
                      <div>
                          <h3>Add User</h3>
                          <section>
+                             <div class="form-control col-10">
                              <label>
                                  Roles:</label>
 
                              <select th:field="*{roles}" multiple required>
 
                                  <option th:each="role : ${roleList}" th:value="${role.id}"><span th:text="${role.roleName}"></span></option>
-                             </select><br/>
+                             </select><br/></div>
+                             <div class="form-control col-10">
                              <label for="name">Name: </label>
                              <input id="name" th:field="*{name}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="userName">User Name: *</label>
                              <input id="userName" th:field="*{userName}" type="text" class="required form-control">
-                             <label for="password">Password: </label>
+                             </div>
+                             <div class="form-control col-10">
+                                 <label for="password">Password: </label>
                              <input id="password" th:field="*{password}" type="password" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="name">Email: </label>
                              <input id="email" th:field="*{email}" type="text" class="required form-control">
+                             </div>
                              <button type="submit"  class="btn btn-primary btn-lg">Save</button>
                          </section>
 

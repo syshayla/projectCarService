@@ -13,43 +13,80 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
 
-<![endif]-->
+    <![endif]-->
 </head>
 
 <body>
 <div layout:fragment="custom-content">
-     <!-- ============================================================== -->
-     <!-- Bread crumb and right sidebar toggle -->
-     <!-- ============================================================== -->
-     <div class="page-breadcrumb">
-         <div class="row">
-             <div class="col-12 d-flex no-block align-items-center">
-                 <h4 class="page-title">About</h4>
-                 <div class="ml-auto text-right">
-                     <nav aria-label="breadcrumb">
-                         <ol class="breadcrumb">
-                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                             <li class="breadcrumb-item active" aria-current="page">About</li>
-                         </ol>
-                     </nav>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- ============================================================== -->
-     <!-- End Bread crumb and right sidebar toggle -->
-     <!-- ============================================================== -->
-     <!-- ============================================================== -->
-     <!-- Container fluid  -->
-     <!-- ============================================================== -->
-     <div class="container-fluid" >
-       about.................
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">User Registration</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Add user</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid" >
 
-     </div>
-     <!-- ============================================================== -->
-     <!-- End Container fluid  -->
-     <!-- ============================================================== -->
-     <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <div class="card">
+            <div class="card-body wizard-content">
+                <h4 class="card-title">CarService Management- An ultimate solution for your vehicle!</h4>
+                <h6 class="card-subtitle"></h6>
+                <span th:class="succes" th:text="${successMsg}"></span>
+                <form id="example-form" th:action="@{/user/edit}" th:object="${user}" method="post" class="m-t-40">
+
+
+                    <div>
+                        <h3>Add User</h3>
+                        <section>
+                            <label>
+                                Roles:</label>
+
+                            <select th:field="*{roles}" multiple required>
+
+                                <option th:each="role : ${roleList}" th:value="${role.id}"><span th:text="${role.roleName}"></span></option>
+                            </select><br/>
+                            <label for="name">Name: </label>
+                            <input id="name" th:field="*{name}" type="text" class="required form-control">
+                            <label for="userName">User Name: *</label>
+                            <input id="userName" th:field="*{userName}" type="text" class="required form-control">
+                            <label for="password">Password: </label>
+                            <input id="password" th:field="*{password}" type="password" class="required form-control">
+                            <label for="email">Email: </label>
+                            <input id="email" th:field="*{email}" type="text" class="required form-control">
+                            <button type="submit"  class="btn btn-primary btn-lg">Save</button>
+                        </section>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
 </div>
 
 </body>

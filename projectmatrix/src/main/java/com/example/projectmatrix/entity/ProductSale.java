@@ -8,14 +8,16 @@ public class ProductSale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+private String name;
     private int qty;
     private double unitPrice;
     private double totalPrice;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date salesDate;
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private ProductPurchase productPurchase;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
@@ -24,12 +26,13 @@ public class ProductSale {
     public ProductSale() {
     }
 
-    public ProductSale(int qty, double unitPrice, double totalPrice, Date salesDate, ProductPurchase productPurchase, Company company) {
+    public ProductSale(String name, int qty, double unitPrice, double totalPrice, Date salesDate, Product product, Company company) {
+        this.name = name;
         this.qty = qty;
         this.unitPrice = unitPrice;
         this.totalPrice = totalPrice;
         this.salesDate = salesDate;
-        this.productPurchase = productPurchase;
+        this.product = product;
         this.company = company;
     }
 
@@ -73,12 +76,12 @@ public class ProductSale {
         this.salesDate = salesDate;
     }
 
-    public ProductPurchase getProductPurchase() {
-        return productPurchase;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductPurchase(ProductPurchase productPurchase) {
-        this.productPurchase = productPurchase;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public Company getCompany() {
@@ -87,5 +90,13 @@ public class ProductSale {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

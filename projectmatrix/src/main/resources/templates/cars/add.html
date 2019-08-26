@@ -56,18 +56,34 @@
                      <div>
                          <h3>Add Car Details</h3>
                          <section>
+                             <div class="form-control col-10">
                              <label for="name">Car Model: </label>
                              <input id="name" th:field="*{carModel}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="userName">License No: *</label>
                              <input id="userName" th:field="*{licenseNo}" type="text" class="required form-control">
+                             </div>
+
+                             <div class="form-control col-10">
+                                 <label for="name">Total Amount: </label>
+                                 <input id="amount" th:field="*{totalAmount}" type="text" class="required form-control">
+                             </div>
+
+                             <div class="form-control col-10">
+                                 <label for="name">Paid Amount: </label>
+                                 <input id="paidamount" th:field="*{paidAmount}" type="text" class="required form-control">
+                             </div>
+
+                             <div class="form-control col-10">
                              <label>
                                  Customers:</label>
 
                              <select th:field="*{customer}" multiple required>
 
-                                 <option th:each="role : ${cusList}" th:value="${role.id}"><span th:text="${role.name}"></span></option>
+                                 <option th:each="cus : ${cusList}" th:value="${cus.id}"><span th:text="${cus.name}"></span></option>
                              </select>
-
+                             </div>
                              <button type="submit"  class="btn btn-primary btn-lg">Save</button>
                          </section>
 

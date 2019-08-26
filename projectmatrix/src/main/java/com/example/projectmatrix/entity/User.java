@@ -12,6 +12,7 @@ public class User {
     private String userName;
     private String password;
     private String email;
+    private boolean status;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -30,9 +31,24 @@ public class User {
         this.email = email;
         this.roles = roles;
     }
-
+    public User(User user){
+        this.name=user.name;
+        this.userName=user.userName;
+        this.password=user.password;
+        this.email=user.email;
+        this.status=user.status;
+        this.roles=user.roles;
+    }
     public Long getId() {
         return id;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public void setId(Long id) {

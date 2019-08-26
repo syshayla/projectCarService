@@ -10,12 +10,5 @@ public class HomeController {
     public String displayIndex(){
         return "dashboard";
     }
-    @GetMapping(value = "/about")
-    public String displayAbout(){
-        return "about";
-    }
-    @GetMapping(value = "/dashboard")
-    public String displayLeft(){
-        return "dashboard";
-    }
+
 }

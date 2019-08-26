@@ -1,5 +1,7 @@
 package com.example.projectmatrix.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,18 +10,16 @@ public class ProductPurchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
     private int qty;
     private double unitPrice;
     private double totalPrice;
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date purchaseDate;
 
 
-    @ManyToOne
-    @JoinColumn(name = "pcat_id")
-    private ProductCategory productCategory;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
@@ -29,18 +29,22 @@ public class ProductPurchase {
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
+
     public ProductPurchase() {
     }
 
-    public ProductPurchase(String name, int qty, double unitPrice, double totalPrice, Date purchaseDate, ProductCategory productCategory, Company company, Supplier supplier) {
-        this.name = name;
+    public ProductPurchase( int qty, double unitPrice, double totalPrice, Date purchaseDate, Company company, Supplier supplier, Product product) {
+
         this.qty = qty;
         this.unitPrice = unitPrice;
         this.totalPrice = totalPrice;
         this.purchaseDate = purchaseDate;
-        this.productCategory = productCategory;
         this.company = company;
         this.supplier = supplier;
+        this.product = product;
     }
 
     public Long getId() {
@@ -51,13 +55,6 @@ public class ProductPurchase {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getQty() {
         return qty;
@@ -91,14 +88,6 @@ public class ProductPurchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public ProductCategory getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(ProductCategory productCategory) {
-        this.productCategory = productCategory;
-    }
-
     public Company getCompany() {
         return company;
     }
@@ -113,5 +102,13 @@ public class ProductPurchase {
 
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

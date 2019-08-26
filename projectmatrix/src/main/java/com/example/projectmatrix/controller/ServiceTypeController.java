@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -55,4 +56,10 @@ public class ServiceTypeController {
         model.addAttribute("list", list);
         return "serviceType/list";
     }
+    @GetMapping(value = "delete/{id}")
+    public String delete(@PathVariable Long id) {
+        this.serviceTypeRepo.deleteById(id);
+        return "serviceType/list";
+    }
+
 }

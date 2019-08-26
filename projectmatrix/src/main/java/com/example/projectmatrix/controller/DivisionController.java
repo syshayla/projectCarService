@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -60,4 +61,11 @@ public class DivisionController {
         model.addAttribute("list", list);
         return "divisions/list";
     }
+    @GetMapping(value = "delete/{id}")
+    public String delete(@PathVariable Long id) {
+        this.divisionRepo.deleteById(id);
+        return "divisions/list";
+    }
+
+
 }

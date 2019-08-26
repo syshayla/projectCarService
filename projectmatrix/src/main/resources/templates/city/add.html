@@ -52,6 +52,10 @@
                  <h6 class="card-subtitle"></h6>
                  <span th:class="succes" th:text="${successMsg}"></span>
                  <form id="example-form" th:action="@{/city/add}" th:object="${City}" method="post" class="m-t-40">
+                     <div>
+                         <h3>Add City</h3>
+                         <section>
+                     <div class="form-control col-10">
                     <label>
                          Districts:</label>
 
@@ -59,13 +63,12 @@
 
                                  <option th:each="role : ${DisList}" th:value="${role.id}"><span th:text="${role.name}"></span></option>
                              </select>
+                     </div>
+                             <div class="form-control col-10">
 
-                     <div>
-                         <h3>Add City</h3>
-                         <section>
                              <label for="name">Name: </label>
                              <input id="name" th:field="*{name}" type="text" class="required form-control">
-
+                             </div>
                              <button type="submit"  class="btn btn-primary btn-lg">Save</button>
                          </section>
 

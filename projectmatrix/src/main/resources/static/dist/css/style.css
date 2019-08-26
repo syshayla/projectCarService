@@ -5,6 +5,7 @@ File: scss
 */
 /*******************************/
 /*******************************/
+
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
 /*Theme Colors*/
 /*Topbar Colors*/
@@ -62,6 +63,12 @@ File: scss
  *  12. Forms
  *  14. Component
  */
+/*label{*/
+/*  margin: 5px;*/
+/*   }*/
+/*.setu{*/
+/*  */
+/*}*/
 body[data-theme="dark"] {
   /* Card Color */
   /* Settings for the  element */

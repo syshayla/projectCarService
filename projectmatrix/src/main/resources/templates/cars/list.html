@@ -66,15 +66,18 @@
                          <th>Car Model</th>
                          <th>License No</th>
                          <th>Customer's Name</th>
+                         <th>Total Amount</th>
+                         <th>Paid Amount</th>
                          <th colspan="2">Action</th>
                      </tr>
                      <tr th:each="u : ${list}">
                          <td th:text="${u.id}"></td>
                          <td th:text="${u.carModel}"></td>
                          <td th:text="${u.licenseNo}"></td>
-                         <td>
-                             <span  th:each="role : ${u.customer}" th:text="${role.name}+' '"></span>
-                         </td>
+                         <td th:text="${u.customer.name}"></td>
+                         <td th:text="${u.totalAmount}"></td>
+                         <td th:text="${u.paidAmount}"></td>
+
                          <td> <a th:href="@{'/car/edit/'+${u.id}}">Edit</a></td>
                          <td> <a th:href="@{'/car/delete/'+${u.id}}">Delete</a></td>
                      </tr>

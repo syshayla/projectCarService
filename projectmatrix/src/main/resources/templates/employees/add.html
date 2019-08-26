@@ -68,29 +68,41 @@
                      <div>
                          <h3>Add Employees</h3>
                          <section>
+                             <div class="form-control col-10">
                              <label for="name">Name: </label>
                              <input id="name" th:field="*{name}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label>Gender: </label>
                              <input  type="radio" value="female" name="gender" th:field="*{gender}" class="required form-control">Female
                              <input  type="radio" value="male" name="gender" th:field="*{gender}" class="required form-control">Male
 <br/>
+                             </div>
+                             <div class="form-control col-10">
                              <label for="password">Mobile: </label>
                              <input id="password" th:field="*{mobile}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="name">Email: </label>
                              <input id="email" th:field="*{email}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="desi">Designation: </label>
                              <input id="desi" th:field="*{designation}" type="text" class="required form-control">
+                             </div>
+                             <div class="form-control col-10">
                              <label for="date">Joining Date: </label>
                              <input id="date" th:field="*{joiningDate}" type="date" class="required form-control">
-
+                             </div>
+                             <div class="form-control col-10">
                              <label>
                                  Companies:</label>
 
-                             <select th:field="*{name}" multiple>
+                             <select th:field="*{company}" multiple>
 
-                                 <option th:each="com : ${companyList}" th:value="${com.id}"><span th:text="${com.name}"></span></option>
+                                 <option th:each="co : ${companyList}" th:value="${co.id}"><span th:text="${co.name}"></span></option>
                              </select>
-
+                             </div>
                              <button type="submit"  class="btn btn-primary btn-lg">Save</button>
                          </section>
 

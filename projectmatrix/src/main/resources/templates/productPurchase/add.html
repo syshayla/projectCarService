@@ -61,15 +61,13 @@
                  <h4 class="card-title">CarService Management- An ultimate solution for your vehicle!</h4>
                  <h6 class="card-subtitle"></h6>
                  <span th:class="succes" th:text="${successMsg}"></span>
-                 <span th:class="err" th:text="${existMsg}"></span>
-                 <form id="example-form" th:action="@{/product/add}" th:object="${product}" method="post" class="m-t-40">
+
+                 <form id="example-form" th:action="@{/purchase/add}" th:object="${productPurchase}" method="post" class="m-t-40">
 
 
                      <div>
                          <h3>Add Purchase Products</h3>
                          <section>
-                             <label for="name">Name: </label>
-                             <input id="name" th:field="*{name}" type="text" class="required form-control">
 
                              <label for="qty">Quantity: </label>
                              <input id="qty" th:field="*{qty}" type="number" class="required form-control">
@@ -80,13 +78,14 @@
                              <input id="desi" th:field="*{totalPrice}" type="number" class="required form-control">
 
                              <label>
-                                 Category:</label>
+                                 Product:</label>
 
-                             <select th:field="*{productCategory}" multiple>
+                             <select th:field="*{product}" multiple>
 
-                                 <option th:each="cat : ${pCatList}" th:value="${cat.id}"><span th:text="${cat.name}"></span></option>
+                                 <option th:each="p : ${proList}" th:value="${p.id}"><span th:text="${p.code}"></span></option>
                              </select>
-<br/>
+                             <br/>
+
                              <label>
                                  Supplier:</label>
 
@@ -101,7 +100,7 @@
 
                              <select th:field="*{company}" multiple>
 
-                                 <option th:each="com : ${companyList}" th:value="${com.id}"><span th:text="${com.name}"></span></option>
+                                 <option th:each="co : ${companyList}" th:value="${co.id}"><span th:text="${co.name}"></span></option>
                              </select>
                              <br/>
                              <button type="submit"  class="btn btn-primary btn-lg">Save</button>

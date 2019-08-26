@@ -37,30 +37,6 @@
                 </ul>
             </li>
 
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Country </span></a>
-                <ul aria-expanded="false" class="collapse  first-level">
-                    <li class="sidebar-item"><a th:href="@{/con/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
-                    <li class="sidebar-item"><a th:href="@{/con/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Division </span></a>
-                <ul aria-expanded="false" class="collapse  first-level">
-                    <li class="sidebar-item"><a th:href="@{/division/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
-                    <li class="sidebar-item"><a th:href="@{/division/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">District </span></a>
-                <ul aria-expanded="false" class="collapse  first-level">
-                    <li class="sidebar-item"><a th:href="@{/dis/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
-                    <li class="sidebar-item"><a th:href="@{/dis/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">City </span></a>
-                <ul aria-expanded="false" class="collapse  first-level">
-                    <li class="sidebar-item"><a th:href="@{/city/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
-                    <li class="sidebar-item"><a th:href="@{/city/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
-                </ul>
-            </li>
 
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Company </span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -87,22 +63,34 @@
                     <li class="sidebar-item"><a th:href="@{/car/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
                 </ul>
             </li>
+
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Car Payment Summary </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/carsum/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product Category </span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item"><a th:href="@{/pcat/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
                     <li class="sidebar-item"><a th:href="@{/pcat/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
                 </ul>
             </li>
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product Purchase </span></a>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product </span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
-                    <li class="sidebar-item"><a th:href="@{/product/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
-                    <li class="sidebar-item"><a th:href="@{/product/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/pro/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/pro/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product Purchase</span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/purchase/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/purchase/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Services </span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
-                    <li class="sidebar-item"><a th:href="@{/services/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
-                    <li class="sidebar-item"><a th:href="@{/services/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/service/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/service/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Service Category </span></a>
@@ -112,7 +100,12 @@
                 </ul>
             </li>
 
-
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sales </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/sale/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/sale/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
 
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Supplier </span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -120,6 +113,37 @@
                     <li class="sidebar-item"><a th:href="@{/sup/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
                 </ul>
             </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Summary </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+               <li class="sidebar-item"><a th:href="@{/summary/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Country </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/con/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/con/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Division </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/division/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/division/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">District </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/dis/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/dis/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">City </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a th:href="@{/city/add}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add </span></a></li>
+                    <li class="sidebar-item"><a th:href="@{/city/list}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> List</span></a></li>
+                </ul>
+            </li>
+
+
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Authentication </span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Login </span></a></li>

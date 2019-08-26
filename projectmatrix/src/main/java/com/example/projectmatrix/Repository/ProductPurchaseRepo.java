@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductPurchaseRepo extends JpaRepository<ProductPurchase, Long> {
-    ProductPurchase findByName(String name);
+
+    ProductPurchase findTopByOrderByIdDesc();
+
 }
