@@ -56,6 +56,7 @@
                  <table class="table">
                      <tr class="">
                          <th>Id</th>
+                         <th>Customer Name</th>
 
                          <th>Total Amount</th>
                           <th>Paid Amount</th>
@@ -66,6 +67,7 @@
                      </tr>
                      <tr th:each="csum : ${list}">
                          <td th:text="${csum.id}"></td>
+                         <td th:text="${csum.car.customer.name}"></td>
 
                          <td th:text="${csum.totalAmount}"></td>
                          <td th:text="${csum.paidAmount}"></td>

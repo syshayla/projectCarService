@@ -65,8 +65,9 @@
                          <th>Id</th>
                          <th>Name</th>
                          <th>UserName</th>
-                         <th>Password</th>
                          <th>Email</th>
+
+                         <th>Status</th>
                          <th>Roles</th>
                          <th colspan="2">Action</th>
                      </tr>
@@ -74,8 +75,11 @@
                          <td th:text="${u.id}"></td>
                          <td th:text="${u.name}"></td>
                          <td th:text="${u.userName}"></td>
-                         <td th:text="${u.password}"></td>
+
                          <td th:text="${u.email}"></td>
+
+                         <td th:text="${u.status}"></td>
+
                          <td>
                              <span  th:each="role : ${u.roles}" th:text="${role.roleName}+' '"></span>
                          </td>

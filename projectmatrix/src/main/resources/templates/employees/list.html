@@ -64,7 +64,7 @@
                          <th>JoiningDate</th>
                          <th>User</th>
                          <th>Company</th>
-                         <th colspan="2">Action</th>
+                         <th>Action</th>
                      </tr>
                      <tr th:each="u : ${list}">
                          <td th:text="${u.id}"></td>
@@ -74,14 +74,9 @@
                          <td th:text="${u.email}"></td>
                          <td th:text="${u.designation}"></td>
                          <td th:text="${u.joiningDate}"></td>
+                         <td th:text="${u.user.name}"></td>
+                         <td th:text="${u.company.name}"></td>
 
-                         <td>
-                             <span  th:each="user : ${u.user}" th:text="${user.name}+' '"></span>
-                         </td>
-                         <td>
-                             <span  th:each="user : ${u.company}" th:text="${user.name}+' '"></span>
-                         </td>
-                         <td> <a th:href="@{'/emp/edit/'+${u.id}}">Edit</a></td>
                          <td> <a th:href="@{'/emp/delete/'+${u.id}}">Delete</a></td>
                      </tr>
                  </table>
